@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="reg.css">
+        <script src="Javascript/login.js"></script>
+        
+        
+        <title>Pig Game</title>
+        <style>
+            
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../../img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+}
+
+.wrapper {
+    width: 850px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.welcomeTitle
+{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: -70px;
+    padding: 100px;
+}
+
+.title{
+    font-size: 50px;
+    color:#EB4D4D;
+    font-weight: bold;
+}
+button {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #EB4D4D;
+    background: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover { font-weight: 600; 
+
+}
+
+
+button:active {
+    outline: none;
+    width: 300px;
+    
+    transition: all 0.4s;
+}
+
+.btn{
+    border: 2px solid #EB4D4D;
+    width: 250px;
+    margin-left: 0px auto;
+    
+    font-size: 20px;
+    padding: 14px 28px; 
+}
+.btn:hover{
+    background: #EB4D4D;
+    border: none;
+    color: white;
+}
+.login{
+    margin-top: 150px;
+
+}
+.register{
+    margin-top: 250px;
+
+}
+</style>
+    </head>
+
+    <body > 
+        <div class="wrapper clearfix">
+           <div class="welcomeTitle">
+                <div class="title" id="titlename">Dice Your Luck</div>
+            </div>
+
+           
+            <a href="/register"><button value="Register" class="register btn" href="/register" >Register</button></a>
+            <a href="/login"><button class="login btn" href="/login">Login</button></a>
+            
+
+            
+        
+        </div>
+     
+        
+    </body>
+</html> 

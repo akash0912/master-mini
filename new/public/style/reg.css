@@ -1,0 +1,141 @@
+/**********************************************
+*** GENERAL
+**********************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../../img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+}
+
+.wrapper {
+    width: 850px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.welcomeTitle
+{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: -70px;
+    padding-top: 100px;
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size: 50px;
+    color:#EB4D4D;
+    font-weight: bold;
+}
+
+.btn-start-game{
+    border: 2px solid #EB4D4D;
+    width: 250px;
+    margin-left: 0px auto;
+    margin-top: 40px;
+    font-size: 20px;
+    padding: 14px 28px; 
+}
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+.btn-start-game:hover{
+    background: #EB4D4D;
+    border: none;
+    color: white;
+}
+
+
+button {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #EB4D4D;
+    background: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover { font-weight: 600; 
+
+}
+
+
+button:active {
+    outline: none;
+    width: 300px;
+    
+    transition: all 0.4s;
+}
+.form-list{
+    font-size: 20px;
+    width: 50%;
+    color:#EB4D4D;
+    font-weight: 300;
+    margin: 0px auto;
+    
+
+}
+
+
+
+
+
+.player-0-name ,.player-1-name{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #EB4D4D;
+    width: 90%;
+    display: block;
+    margin-top: 10px;
+    
+    transition: all 0.3s;
+  }
+  .player-0-name:focus, .player-1-name:focus{
+    
+    outline: none;
+  }
+.player-name{
+    margin-left: 10px;
+
+}
+
+

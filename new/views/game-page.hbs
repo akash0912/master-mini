@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style/style.css">
+        <script src="Javascript/player.js"></script>
+        
+        <title>Pig Game</title>
+    </head>
+
+    <body>
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
+            
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+            
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            
+
+            <input type="text" placeholder="Final Score" class="final-score">
+            <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+           <!--  <img src="dice-5.png" alt="Dice" class="dice" id="dice-2"> -->
+        </div>
+        
+        
+        <!--<script src="challenges.js"></script>-->
+        <script>var scores, roundScores, activePlayer, gamePlaying;
+
+
+init();
+
+
+/* var abcd = (function(){
+   var player1= document.querySelector(".name0").value;
+   var player2 =document.querySelector(".name1").value;
+
+   document.getElementById("name-0").textContent=player1;
+   document.getElementById("name-1").textContent=player2;
+})(); */
+
+
+document.querySelector('.btn-roll').addEventListener('click', function() {
+    if(gamePlaying)
+    {  
+          //1. random number
+        var dice= Math.floor(Math.random()*6)+1;
+        //2. display dice
+        var diceDOM= document.querySelector('.dice');
+        diceDOM.style.display='block';
+    
+        diceDOM.src='img/dice-' + dice + '.png';
+        
+        
+        if(dice!== 1)
+        {
+            roundScores += dice;
+            document.querySelector('#current-' + activePlayer).textContent=roundScores;
+        }
+        else{
+            nextPlayer();
+             //document.querySelector('.player-0-panel').classList.remove('active');
+            //document.querySelector('.player-1-panel').classList.add('active');
+        }
+        
+
+    }
+   
+   
+});
+
+//click on hold
+document.querySelector('.btn-hold').addEventListener('click', function() {
+   if(gamePlaying)
+   {    //1. add scores to global scores
+        scores[activePlayer] += roundScores;
+    
+    
+        document.querySelector('#score-' + activePlayer).textContent=scores[activePlayer];
+
+        if(scores[activePlayer] >= 100){
+            document.querySelector('#name-'+ activePlayer).textContent='WINNER!';
+            document.querySelector('.dice').style.display='none';
+            document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
+            document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
+            gamePlaying=false;
+        }
+        else{
+        nextPlayer();
+        }
+    }
+});
+
+//click on new game
+document.querySelector('.btn-new').addEventListener('click', init);
+
+function nextPlayer(){
+    document.getElementById('current-'+activePlayer).textContent='0';
+
+        activePlayer===0 ? activePlayer= 1 : activePlayer= 0;
+
+        roundScores=0;
+        document.querySelector('.dice').style.display='none';   
+
+
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+}
+
+
+function init(){
+    scores = [0,0];
+    roundScores = 0;
+    activePlayer = 0;
+    gamePlaying=true;
+
+//document.querySelector('#current-0').textContent=dice;
+    document.getElementById('score-0').textContent='0';
+    document.getElementById('score-1').textContent='0';
+    document.getElementById('current-0').textContent='0';
+    document.getElementById('current-0').textContent='0';
+
+//dicce image is hidden at the starting of the game.
+    document.querySelector('.dice').style.display='none';
+
+    document.querySelector('#name-0').textContent='Player 1';
+    document.querySelector('#name-1').textContent='Player 2';
+
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
+
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
+
+    document.querySelector('.player-0-panel').classList.add('active');
+
+
+
+
+}
+
+
+
+
+
+</script>
+    </body>
+</html>

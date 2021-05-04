@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style/reg.css">
+        <script src="Javascript/login.js"></script>
+        
+        
+        <title>Pig Game</title>
+        
+    </head>
+
+    <body > 
+        <div class="wrapper clearfiax">
+           <div class="welcomeTitle">
+                <div class="title" id="titlename">Login</div>
+            </div>
+
+           
+            <form class="fomr1" action="/login" method="POST">
+                <div class="Email form-list">
+                    <div class="player-name" id="name-0">Email</div>
+                    <input type="email" class="player-0-name" name="email" required>
+                </div>
+                <div class="Password form-list">
+                    <div class="player-name" id="name-0">Password</div>
+                    <input type="password" class="player-0-name" name="password" required>
+                </div>
+               
+                <button class="btn-start-game"  type="submit" onclick="handleStart()">Log In</button>
+            </form>
+            
+
+            
+        </form>
+        </div>
+     
+        
+    </body>
+</html> 
